@@ -1,0 +1,18 @@
+Its config template example:
+username variable example:
+
+username input {{ if .Name }}exists.{{ else }}not exists.{{end}} 
+{{ if .Name }}
+username is : {{ .Name }}{{end}}
+
+
+domain variable example:
+{{if .Domain -}}
+{{- range .Domain}}upstream socks5 127.0.0.1:40408 ".{{. -}}"
+{{end}}
+{{- range .Domain}}upstream socks5 127.0.0.1:40408 "{{. -}}"
+{{end}}{{end}}
+
+token variable example:
+{{ if .Token}}token is {{ .Token}}{{end}}
+
